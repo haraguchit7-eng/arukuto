@@ -277,6 +277,15 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 .hero-slide.active img{
   transform:scale(1.12);
 }
+  /* 2枚目：背景を右へ */
+.hero-slide.slide-02 img{
+  object-position: 78% center !important;
+}
+
+/* 3枚目：背景を下へ */
+.hero-slide.slide-03 img{
+  object-position: center 80% !important;
+}
 </style>
 </head>
 <body>
@@ -315,7 +324,7 @@ p{font-size:18px;color:var(--muted);font-weight:600}
       <p class="hero-copy">歩けるって、自由だ。<br>ARUKTOは、歩く力を整え、<br>“これからの人生を楽しむ体”をつくるための場所です。</p>
     </div>
   </div>
-  <div class="hero-slide">
+ <div class="hero-slide slide-02">
     <img src="assets/hero-02.png" alt="旅行を楽しむシニア">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -324,8 +333,8 @@ p{font-size:18px;color:var(--muted);font-weight:600}
       <p class="hero-copy">旅行も、趣味も、家族との時間も。<br>歩く力を整えることで、<br>これからの毎日はもっと自由になります。</p>
     </div>
   </div>
-  <div class="hero-slide">
-    <img src="assets/hero-03.jpg" alt="体力測定を受けるシニア">
+  <div class="hero-slide slide-03">
+    <img src="assets/hero-03.png" alt="体力測定を受けるシニア">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">ARUKTO / Measure Your Walking Power</p>
