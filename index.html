@@ -80,7 +80,7 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 }
 .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(7,31,58,.18)}
 .btn-primary{background:var(--gold);color:#fff}
-.btn-secondary{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(12px)}
+.btn-secondary{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(12px)}
 
 /* Header */
 .header{
@@ -89,7 +89,7 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   left:0;
   right:0;
   z-index:100;
-  background:rgba(255,255,255,.84);
+  background:rgba(255,255,255,.86);
   backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(0,0,0,.04);
 }
@@ -108,8 +108,9 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 }
 .site-logo{
   width:58px;
-  height:auto;
+  height:58px;
   object-fit:contain;
+  mix-blend-mode:multiply;
 }
 .logo-text{
   display:flex;
@@ -162,7 +163,6 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   overflow:hidden;
   background:#071f3a;
 }
-
 .hero-slide{
   position:absolute;
   inset:0;
@@ -170,13 +170,11 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   visibility:hidden;
   transition:opacity 1.2s ease, visibility 1.2s ease;
 }
-
 .hero-slide.active{
   opacity:1;
   visibility:visible;
   z-index:2;
 }
-
 .hero-slide img{
   position:absolute;
   inset:0;
@@ -184,40 +182,19 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   height:100%;
   object-fit:cover;
   transform:none;
-  filter:brightness(1.02) contrast(1.05) saturate(1.06);
+  filter:brightness(1.03) contrast(1.04) saturate(1.05);
 }
-
-/* 画像位置 */
-.hero-slide.slide-01 img{
-  object-position:center 58%;
-}
-
-.hero-slide.slide-02 img{
-  object-position:72% center;
-}
-
-.hero-slide.slide-03 img{
-  object-position:center 58%;
-}
-
+.hero-slide.slide-01 img{object-position:center 60%}
+.hero-slide.slide-02 img{object-position:74% center}
+.hero-slide.slide-03 img{object-position:center 56%}
 .hero-overlay{
   position:absolute;
   inset:0;
   z-index:1;
   background:
-    linear-gradient(
-      90deg,
-      rgba(7,31,58,.58) 0%,
-      rgba(7,31,58,.32) 48%,
-      rgba(7,31,58,.08) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(7,31,58,.04),
-      rgba(7,31,58,.18)
-    );
+    linear-gradient(90deg,rgba(7,31,58,.58) 0%,rgba(7,31,58,.32) 48%,rgba(7,31,58,.08) 100%),
+    linear-gradient(180deg,rgba(7,31,58,.04),rgba(7,31,58,.18));
 }
-
 .hero-content{
   position:absolute;
   z-index:3;
@@ -227,7 +204,6 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   width:min(760px,84vw);
   color:#fff;
 }
-
 .hero-label{
   font-size:14px;
   letter-spacing:.14em;
@@ -236,7 +212,6 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   margin-bottom:22px;
   text-transform:uppercase;
 }
-
 .hero-content h1{
   font-size:clamp(42px,5.4vw,82px);
   line-height:1.08;
@@ -245,14 +220,12 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   font-weight:950;
   color:#fff;
 }
-
 .hero-copy{
   font-size:clamp(18px,1.8vw,25px);
   line-height:1.75;
   font-weight:800;
   color:rgba(255,255,255,.96);
 }
-
 .hero-cta{
   position:absolute;
   z-index:5;
@@ -262,7 +235,6 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   gap:18px;
   flex-wrap:wrap;
 }
-
 .hero-dots{
   position:absolute;
   z-index:5;
@@ -271,7 +243,6 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   display:flex;
   gap:12px;
 }
-
 .dot{
   width:11px;
   height:11px;
@@ -280,7 +251,6 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   background:rgba(255,255,255,.45);
   cursor:pointer;
 }
-
 .dot.active{
   width:34px;
   background:#c8a45d;
@@ -371,7 +341,7 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 
 @media(max-width:560px){
   .header-inner{height:66px}
-  .site-logo{width:42px}
+  .site-logo{width:42px;height:42px}
   .logo-text strong{font-size:28px}
   .logo-text span{font-size:10px;letter-spacing:.08em}
   .nav-cta{height:44px;padding:0 14px;font-size:13px}
@@ -385,16 +355,6 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   .flow-step{padding:26px}
   .hero-slider{min-height:650px}
 }
-  /* =========================
-修正①：FV画像の人物位置を下げる
-========================= */
-
-/* 1枚目だけ下に下げる */
-.hero-slide.slide-01 img{
-  object-position:center 72% !important;
-}
-
-/* もっと下げたい場合は 80% に変更 */
 </style>
 </head>
 
@@ -420,13 +380,12 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 
 <main>
 <section class="hero-slider" id="top">
-  <!-- 1枚目：ウォーキング -->
   <div class="hero-slide slide-01 active">
-    <img src="assets/hero-03.jpg" alt="体力測定を受けるシニア">
+    <img src="assets/hero-03.jpg" alt="公園を歩くシニア夫婦">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">ARUKTO / WALKING EXERCISE</p>
-      <h1>60歳からの<br>ウォーキング<br>エクササイズ<br></h1>
+      <h1>60歳からの<br>ウォーキング<br>エクササイズ</h1>
       <p class="hero-copy">
         歩けるって、自由だ。<br>
         ARUKTOは、歩く力を整え、<br>
@@ -435,13 +394,12 @@ p{font-size:18px;color:var(--muted);font-weight:600}
     </div>
   </div>
 
-  <!-- 2枚目：旅行 -->
   <div class="hero-slide slide-02">
     <img src="assets/hero-02.png" alt="旅行を楽しむシニア夫婦">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">ARUKTO / LIFE PERFORMANCE</p>
-      <h1>まだまだ、<br>行きたい<br>場所がある。<br></h1>
+      <h1>まだまだ、<br>行きたい<br>場所がある。</h1>
       <p class="hero-copy">
         旅行も、趣味も、家族との時間も。<br>
         歩く力を整えることで、<br>
@@ -450,32 +408,18 @@ p{font-size:18px;color:var(--muted);font-weight:600}
     </div>
   </div>
 
-  <!-- 3枚目：測定 -->
-  <div class=" slide-03">
-    <img src="assets/hero-01.png" alt="公園を歩くシニア夫婦">
+  <div class="hero-slide slide-03">
+    <img src="assets/hero-01.png" alt="体力測定を受けるシニア">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">ARUKTO / MEASURE YOUR WALKING POWER</p>
-      <h1>まずは、<br>“今の歩く力”を<br>知ることから。<br></h1>
+      <h1>まずは、<br>“今の歩く力”を<br>知ることから。</h1>
       <p class="hero-copy">
         筋力・持久力を測定し、<br>
         あなたに合ったウォーキングエクササイズで、<br>
         無理なく続けられる健康習慣をつくります。
       </p>
     </div>
-  </div>
-
-  <div class="hero-cta">
-    <a href="#cta" class="btn btn-primary">無料体験はこちら</a>
-    <a href="#flow" class="btn btn-secondary">まずは現状を測ってみる</a>
-  </div>
-
-  <div class="hero-dots">
-    <button class="dot active" aria-label="1枚目"></button>
-    <button class="dot" aria-label="2枚目"></button>
-    <button class="dot" aria-label="3枚目"></button>
-  </div>
-</section>
   </div>
 
   <div class="hero-cta">
@@ -645,7 +589,7 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 
 <script>
 document.addEventListener("DOMContentLoaded",function(){
-  const slides=document.querySelectorAll(".");
+  const slides=document.querySelectorAll(".hero-slide");
   const dots=document.querySelectorAll(".dot");
   let current=0;
   let timer;
