@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARUKTO｜60歳からのウォーキングエクササイズ</title>
+<meta name="description" content="ARUKTOは、60歳からのウォーキングエクササイズ。歩く力を測定し、一人ひとりに合わせた運動習慣で“これからの人生を楽しむ体”をつくります。" />
+<style>
+:root{
+  --navy:#071f3a;
+  --navy2:#0d3158;
+  --gold:#c8a45d;
+  --wood:#b98858;
+  --cream:#f7f3ea;
+  --bg:#f8fafc;
+  --white:#fff;
+  --ink:#142033;
+  --muted:#667085;
+  --line:#e2e8f0;
+  --shadow:0 20px 60px rgba(7,31,58,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.section{padding:110px 0}
+.section.light{background:#fff}
+.section.cream{background:var(--cream)}
+.eyebrow{
+  color:var(--gold);
+  font-size:13px;
+  letter-spacing:.14em;
+  font-weight:900;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+h1,h2,h3,p{margin:0}
+h2{
+  font-size:clamp(34px,4.2vw,56px);
+  line-height:1.22;
+  letter-spacing:-.045em;
+  color:var(--navy);
+  font-weight:900;
+}
+h3{
+  font-size:24px;
+  line-height:1.35;
+  color:var(--navy);
+  font-weight:900;
+}
+p{font-size:18px;color:var(--muted);font-weight:600}
+.lead{font-size:clamp(20px,2vw,25px);line-height:1.75;color:#344054;font-weight:700}
+.center{text-align:center}.center .lead{max-width:820px;margin:20px auto 0}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:58px;padding:0 28px;border-radius:999px;
+  font-size:17px;font-weight:900;transition:.25s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(7,31,58,.18)}
+.btn-primary{background:var(--gold);color:#fff}
+.btn-secondary{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(12px)}
+.btn-navy{background:var(--navy);color:#fff}
+.rule{width:96px;height:5px;background:linear-gradient(90deg,var(--gold),var(--wood));border-radius:99px;margin:24px 0 36px}.center .rule{margin:24px auto 36px}
+
+/* Header */
+/* Header */
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.04);
+}
+
+.header-inner{
+  width:min(1180px, calc(100% - 40px));
+  margin:0 auto;
+  height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.site-logo{
+  width:58px;
+  height:auto;
+  object-fit:contain;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.logo-text strong{
+  font-size:42px;
+  line-height:1;
+  letter-spacing:.06em;
+  font-weight:950;
+  color:#071f3a;
+}
+
+.logo-text span{
+  margin-top:6px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:#c8a45d;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:38px;
+}
+
+.nav a{
+  font-size:16px;
+  font-weight:800;
+  color:#475467;
+  transition:.25s ease;
+}
+
+.nav a:hover{
+  color:#071f3a;
+}
+
+.nav-cta{
+  height:58px;
+  padding:0 28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background:#071f3a !important;
+  color:#fff !important;
+  font-weight:900;
+}
+
+/* Hero Slider */
+.hero-slider{position:relative;width:100%;height:100vh;min-height:720px;overflow:hidden;background:var(--navy)}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}.hero-slide.active{opacity:1;z-index:2}
+.hero-slide img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(7,31,58,.82) 0%,rgba(7,31,58,.56) 42%,rgba(7,31,58,.14) 100%),linear-gradient(180deg,rgba(7,31,58,.05),rgba(7,31,58,.42));
+}
+.hero-content{position:absolute;z-index:3;left:8%;top:50%;transform:translateY(-50%);width:min(780px,84vw);color:#fff}
+.hero-label{font-size:14px;letter-spacing:.14em;font-weight:900;color:#e7c77d;margin-bottom:22px;text-transform:uppercase}
+.hero-content h1{font-size:clamp(44px,6vw,88px);line-height:1.07;letter-spacing:-.055em;margin:0 0 26px;font-weight:950;color:#fff}
+.hero-copy{font-size:clamp(19px,2vw,28px);line-height:1.7;font-weight:700;color:rgba(255,255,255,.94)}
+.hero-cta{position:absolute;z-index:5;left:8%;bottom:92px;display:flex;gap:18px;flex-wrap:wrap}
+.hero-dots{position:absolute;z-index:5;right:8%;bottom:112px;display:flex;gap:12px}.dot{width:11px;height:11px;border-radius:99px;border:none;background:rgba(255,255,255,.4);cursor:pointer}.dot.active{width:34px;background:var(--gold)}
+
+/* Cards */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:32px;box-shadow:var(--shadow)}
+.card p{margin-top:12px}.feature-no{display:inline-flex;color:var(--gold);font-weight:950;font-size:13px;letter-spacing:.12em;margin-bottom:14px}.icon{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;display:grid;place-items:center;font-weight:950;margin-bottom:20px}
+
+/* Problem */
+.problem{background:linear-gradient(135deg,#fff,var(--cream))}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center}.quote-box{background:var(--navy);border-radius:34px;padding:46px;color:#fff;box-shadow:var(--shadow)}.quote-box h2{color:#fff}.quote-box p{color:rgba(255,255,255,.82);margin-top:20px;font-size:20px}
+
+/* Comparison */
+.compare{background:#fff;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.compare-row{display:grid;grid-template-columns:1fr 1fr}.compare-row>div{padding:22px 28px;border-bottom:1px solid var(--line);font-weight:800}.compare-row.head>div{background:var(--navy);color:#fff;font-size:20px}.compare-row>div:first-child{border-right:1px solid var(--line);color:#667085}.compare-row>div:last-child{color:var(--navy);background:#fbfdff}
+
+/* Future */
+.future-list{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:42px}.future-item{background:#fff;border-radius:24px;padding:26px;text-align:center;border:1px solid var(--line);box-shadow:0 12px 34px rgba(7,31,58,.07);font-weight:900;color:var(--navy)}
+
+/* Flow */
+.flow{display:grid;gap:22px;margin-top:44px}.flow-step{display:grid;grid-template-columns:110px 1fr;gap:28px;background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:var(--shadow);align-items:start}.step-num{width:84px;height:84px;border-radius:24px;background:linear-gradient(135deg,var(--gold),var(--wood));color:#fff;display:grid;place-items:center;font-size:24px;font-weight:950}.flow-step h3{font-size:28px}.flow-step p{margin-top:12px}
+
+/* Price */
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:42px}.price-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;text-align:center;box-shadow:var(--shadow)}.price-card.recommend{border:2px solid var(--gold);transform:translateY(-10px)}.price-card h3{font-size:22px}.price{font-size:42px;font-weight:950;color:var(--navy);margin:18px 0 4px}.price small{font-size:15px;color:#667085}.option-box{margin-top:28px;background:#fff;border-radius:28px;border:1px solid var(--line);padding:30px;box-shadow:var(--shadow)}
+
+/* Voice */
+.voice-card{background:#fff;border-radius:28px;padding:30px;border:1px solid var(--line);box-shadow:var(--shadow)}.voice-card p{font-size:21px;color:var(--navy);font-weight:850}.voice-meta{margin-top:18px;color:#667085;font-weight:800;font-size:14px}
+
+/* FAQ */
+.faq{max-width:900px;margin:42px auto 0}.faq-item{background:#fff;border:1px solid var(--line);border-radius:22px;margin-bottom:14px;padding:24px 28px;box-shadow:0 10px 28px rgba(7,31,58,.06)}.faq-q{font-size:19px;font-weight:900;color:var(--navy)}.faq-a{margin-top:10px;color:#667085;font-weight:700}
+
+/* CTA */
+.final-cta{background:linear-gradient(135deg,var(--navy),#123d68);color:#fff;text-align:center}.final-cta h2{color:#fff}.final-cta p{color:rgba(255,255,255,.82);margin:18px auto 34px;max-width:780px}
+/* FOOTER */
+.footer{
+  background:#06182e;
+  padding:56px 20px 34px;
+}
+
+.footer-inner{
+  width:min(1180px,100%);
+  margin:0 auto;
+  text-align:center;
+}
+
+.footer-logo-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:48px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.footer-logo-row img{
+  height:42px;
+  width:auto;
+  opacity:.9;
+  transition:.25s ease;
+}
+
+.footer-logo-row img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+.footer-copy{
+  font-size:13px;
+  color:rgba(255,255,255,.6);
+  letter-spacing:.04em;
+}
+
+/* Animation */
+.reveal{opacity:0;transform:translateY(22px);transition:.8s ease}.reveal.show{opacity:1;transform:none}
+
+@media(max-width:960px){
+  .nav a:not(.nav-cta){display:none}.grid2,.grid3,.grid4,.split,.price-grid{grid-template-columns:1fr}.future-list{grid-template-columns:1fr 1fr}.flow-step{grid-template-columns:1fr}.price-card.recommend{transform:none}.hero-slider{min-height:680px;height:92vh}.hero-content{left:24px;top:44%;width:calc(100% - 48px)}.hero-cta{left:24px;right:24px;bottom:80px;flex-direction:column}.btn{width:100%}.hero-dots{right:auto;left:24px;bottom:36px}.section{padding:82px 0}
+}
+@media(max-width:560px){
+  .header-inner{height:66px}.logo{font-size:22px}.nav .nav-cta{padding:9px 12px;font-size:13px}.future-list{grid-template-columns:1fr}.hero-content h1{font-size:42px}.hero-copy{font-size:18px}.compare-row{grid-template-columns:1fr}.compare-row>div:first-child{border-right:none}.price{font-size:36px}.card{padding:26px}.flow-step{padding:26px}.hero-slider{min-height:650px}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+
+    <a href="#top" class="logo-wrap">
+      <img src="assets/logo-arukto.svg" alt="ARUKTO" class="site-logo">
+
+      <div class="logo-text">
+        <strong>ARUKTO</strong>
+        <span>60歳からのウォーキングエクササイズ</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#about">ARUKTOとは</a>
+      <a href="#flow">サービス内容</a>
+      <a href="#price">料金</a>
+
+      <a href="#cta" class="nav-cta">
+        無料体験
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero-slider" id="top">
+  <div class="hero-slide active">
+    <img src="assets/hero-01.jpg" alt="街を歩く60代夫婦">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-label">ARUKTO / 60歳からのウォーキングエクササイズ</p>
+      <h1>60歳からの<br>ウォーキングエクササイズ</h1>
+      <p class="hero-copy">歩けるって、自由だ。<br>ARUKTOは、歩く力を整え、<br>“これからの人生を楽しむ体”をつくるための場所です。</p>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <img src="assets/hero-02.jpg" alt="旅行を楽しむシニア">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-label">ARUKTO / Life Performance</p>
+      <h1>まだまだ、<br>行きたい場所がある。</h1>
+      <p class="hero-copy">旅行も、趣味も、家族との時間も。<br>歩く力を整えることで、<br>これからの毎日はもっと自由になります。</p>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <img src="assets/hero-03.jpg" alt="体力測定を受けるシニア">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-label">ARUKTO / Measure Your Walking Power</p>
+      <h1>まずは、<br>“今の歩く力”を知ることから。</h1>
+      <p class="hero-copy">筋力・持久力を測定し、<br>あなたに合ったウォーキングエクササイズで、<br>無理なく続けられる健康習慣をつくります。</p>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="#cta" class="btn btn-primary">無料体験はこちら</a>
+    <a href="#flow" class="btn btn-secondary">まずは現状を測ってみる</a>
+  </div>
+  <div class="hero-dots">
+    <button class="dot active" aria-label="1枚目"></button>
+    <button class="dot" aria-label="2枚目"></button>
+    <button class="dot" aria-label="3枚目"></button>
+  </div>
+</section>
+
+<section class="section problem">
+  <div class="container split reveal">
+    <div class="quote-box">
+      <div class="eyebrow">PROBLEM</div>
+      <h2>歩く力は、<br>人生の自由を支えています。</h2>
+      <p>年齢を重ねるにつれて、筋力やバランス能力は少しずつ低下していきます。</p>
+    </div>
+    <div>
+      <p class="lead">しかし、正しく体を動かし、歩く習慣を続けることで、“動ける未来”は変えていくことができます。</p>
+      <div class="rule"></div>
+      <p>ARUKTOは、体力低下を「年齢だから仕方ない」で終わらせず、歩ける体づくりを日常に取り入れるための場所です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section light" id="about">
+  <div class="container center reveal">
+    <div class="eyebrow">ABOUT ARUKTO</div>
+    <h2>歩く力を、科学する。</h2>
+    <div class="rule"></div>
+    <p class="lead">ARUKTOは、スポーツ科学に基づく測定と、一人ひとりに合わせたウォーキングエクササイズを通じて、「いつまでも歩ける体づくり」をサポートする、60歳以上向けの新しい健康習慣施設です。</p>
+  </div>
+</section>
+
+<section class="section cream">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow">FEATURE</div>
+      <h2>ARUKTOの特徴</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid4 reveal">
+      <div class="card"><span class="feature-no">FEATURE 01</span><div class="icon">測</div><h3>歩く力を測定</h3><p>持久力・筋力などを測定し、現在の身体状態を可視化。</p></div>
+      <div class="card"><span class="feature-no">FEATURE 02</span><div class="icon">30</div><h3>1回30分でOK</h3><p>短時間だから、無理なく続けやすい。</p></div>
+      <div class="card"><span class="feature-no">FEATURE 03</span><div class="icon">変</div><h3>変化が見える</h3><p>測定 → 改善 → 再測定を繰り返すことで、体の変化を実感。</p></div>
+      <div class="card"><span class="feature-no">FEATURE 04</span><div class="icon">60</div><h3>60歳以上専用</h3><p>年齢に合わせた、安心できるプログラム設計。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section light">
+  <div class="container reveal">
+    <div class="center">
+      <div class="eyebrow">DIFFERENCE</div>
+      <h2>一般的なジムとの違い</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="compare">
+      <div class="compare-row head"><div>一般的なジム</div><div>ARUKTO</div></div>
+      <div class="compare-row"><div>若者中心</div><div>60歳以上専用</div></div>
+      <div class="compare-row"><div>自己流</div><div>専門サポート</div></div>
+      <div class="compare-row"><div>なんとなく運動</div><div>測定して改善</div></div>
+      <div class="compare-row"><div>続かない</div><div>変化が見える</div></div>
+      <div class="compare-row"><div>キツい</div><div>無理なく続く</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section cream">
+  <div class="container center reveal">
+    <div class="eyebrow">FUTURE</div>
+    <h2>こんな毎日を目指します</h2>
+    <p class="lead">売るのは運動ではなく、これからの人生を楽しめる未来です。</p>
+    <div class="future-list">
+      <div class="future-item">旅行を楽しめる</div>
+      <div class="future-item">孫と元気に遊べる</div>
+      <div class="future-item">趣味を続けられる</div>
+      <div class="future-item">外出が楽しくなる</div>
+      <div class="future-item">自分の足で生活できる</div>
+    </div>
+  </div>
+</section>
+
+<section class="section light" id="flow">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow">SERVICE FLOW</div>
+      <h2>サービス内容 / ご利用の流れ</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="flow reveal">
+      <div class="flow-step"><div class="step-num">01</div><div><h3>体力測定実施</h3><p><strong>現状把握からスタート。</strong><br>筋力・持久力などを科学的に測定し、現在の身体機能を可視化。「今の自分の状態」を知ることで、これから必要な改善ポイントを明確にします。</p></div></div>
+      <div class="flow-step"><div class="step-num">02</div><div><h3>個別プログラム作成</h3><p>測定結果をもとに、一人ひとりの身体状態や目的に合わせた最適なプログラムを作成。無理なく続けられる内容で、“歩ける体づくり”をサポートします。</p></div></div>
+      <div class="flow-step"><div class="step-num">03</div><div><h3>ウォーキングエクササイズ</h3><p>専門スタッフのサポートのもと、筋力・持久力を鍛えるウォーキングエクササイズを実施。数値化するので短時間でも効果的に、日常生活で動きやすい身体を目指します。</p></div></div>
+      <div class="flow-step"><div class="step-num">04</div><div><h3>再測定で変化確認</h3><p>定期的に再測定を行い、身体機能の変化を可視化。“できるようになった”を実感しながら、継続的な健康習慣につなげます。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section cream" id="price">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow">PRICE</div>
+      <h2>料金</h2>
+      <p class="lead">無理なく続けやすい月額プランをご用意しています。</p>
+    </div>
+    <div class="price-grid reveal">
+      <div class="price-card"><h3>初期費用</h3><div class="price">5,500円</div><small>初回登録時</small></div>
+      <div class="price-card"><h3>月4プラン</h3><div class="price">9,900円</div><small>週1回目安</small></div>
+      <div class="price-card recommend"><h3>月6プラン</h3><div class="price">13,200円</div><small>おすすめ</small></div>
+      <div class="price-card"><h3>月8プラン</h3><div class="price">16,500円</div><small>しっかり継続</small></div>
+    </div>
+    <div class="option-box reveal">
+      <h3>オプション：持久力測定</h3>
+      <p>1回 6,600円 / 年3回 月額1,650円 / 年6回 月額3,300円</p>
+    </div>
+  </div>
+</section>
+
+<section class="section light">
+  <div class="container">
+    <div class="center reveal"><div class="eyebrow">VOICE</div><h2>お客様の声</h2><div class="rule"></div></div>
+    <div class="grid4 reveal">
+      <div class="voice-card"><p>「旅行が楽しくなった」</p><div class="voice-meta">70代・女性</div></div>
+      <div class="voice-card"><p>「歩くことへの不安が減った」</p><div class="voice-meta">60代・男性</div></div>
+      <div class="voice-card"><p>「外出する回数が増えた」</p><div class="voice-meta">70代・女性</div></div>
+      <div class="voice-card"><p>「体が軽くなった」</p><div class="voice-meta">60代・女性</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section cream">
+  <div class="container reveal">
+    <div class="center"><div class="eyebrow">FAQ</div><h2>よくある質問</h2><div class="rule"></div></div>
+    <div class="faq">
+      <div class="faq-item"><div class="faq-q">運動が苦手でも大丈夫ですか？</div><div class="faq-a">もちろん大丈夫です。お身体の状態に合わせて無理のない内容から始められます。</div></div>
+      <div class="faq-item"><div class="faq-q">60代から始めても遅くないですか？</div><div class="faq-a">今からでも十分間に合います。まずは現在の歩く力を知ることから始めましょう。</div></div>
+      <div class="faq-item"><div class="faq-q">どんな服装で行けばいいですか？</div><div class="faq-a">動きやすい服装でOKです。室内用シューズが必要な場合は事前にご案内します。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section final-cta" id="cta">
+  <div class="container reveal">
+    <div class="eyebrow">TRIAL</div>
+    <h2>まずは、<br>“今の歩く力”を知りませんか？</h2>
+    <p class="lead">無料体験で、ARUKTOの雰囲気と測定・エクササイズの流れをご確認ください。</p>
+    <div class="btn-row" style="justify-content:center"><a href="#" class="btn btn-primary">無料体験を予約する</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-logo-row">
+
+      <a href="https://sports-science.co.jp/" target="_blank">
+        <img src="assets/logo-sportscience.svg" alt="株式会社スポーツ科学">
+      </a>
+
+      <a href="https://arrows-lab.jp/" target="_blank">
+        <img src="assets/logo-arrowslab.svg" alt="アローズラボ">
+      </a>
+
+      <a href="https://arrows-gym.jp/" target="_blank">
+        <img src="assets/logo-arrowsgym.svg" alt="アローズジム">
+      </a>
+
+    </div>
+
+    <p class="footer-copy">
+      © ARUKTO / 株式会社スポーツ科学
+    </p>
+
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  const slides=document.querySelectorAll(".hero-slide");
+  const dots=document.querySelectorAll(".dot");
+  let current=0;
+  let timer;
+  function showSlide(index){
+    slides.forEach((s,i)=>s.classList.toggle("active",i===index));
+    dots.forEach((d,i)=>d.classList.toggle("active",i===index));
+    current=index;
+  }
+  function nextSlide(){showSlide((current+1)%slides.length)}
+  function start(){timer=setInterval(nextSlide,5000)}
+  dots.forEach((dot,index)=>dot.addEventListener("click",()=>{clearInterval(timer);showSlide(index);start()}));
+  showSlide(0);start();
+
+  const reveals=document.querySelectorAll(".reveal");
+  if(!("IntersectionObserver" in window)){reveals.forEach(el=>el.classList.add("show"));return;}
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");observer.unobserve(entry.target)}});
+  },{threshold:.12});
+  reveals.forEach(el=>observer.observe(el));
+});
+</script>
+</body>
+</html>
