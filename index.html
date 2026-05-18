@@ -288,6 +288,33 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 }
   object-position: 90% center !important;
   object-position: center 95% !important;
+  /* =========================
+画像復旧・位置調整
+========================= */
+
+.hero-slide img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  opacity:1 !important;
+  filter:brightness(.95) contrast(1.05) saturate(1.05);
+}
+
+/* 1枚目 */
+.hero-slide:nth-of-type(1) img{
+  object-position:center center !important;
+}
+
+/* 2枚目：右寄せ */
+.hero-slide:nth-of-type(2) img{
+  object-position:80% center !important;
+}
+
+/* 3枚目：下寄せ */
+.hero-slide:nth-of-type(3) img{
+  object-position:center 85% !important;
+}
 </style>
 </head>
 <body>
