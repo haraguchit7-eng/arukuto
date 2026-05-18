@@ -161,7 +161,19 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 .hero-slide img{width:100%;height:100%;object-fit:cover}
 .hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(7,31,58,.82) 0%,rgba(7,31,58,.56) 42%,rgba(7,31,58,.14) 100%),linear-gradient(180deg,rgba(7,31,58,.05),rgba(7,31,58,.42));
+ .hero-overlay{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7,31,58,.55) 0%,
+      rgba(7,31,58,.28) 42%,
+      rgba(7,31,58,.05) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7,31,58,.02),
+      rgba(7,31,58,.18)
+    );
 }
 .hero-content{position:absolute;z-index:3;left:8%;top:50%;transform:translateY(-50%);width:min(780px,84vw);color:#fff}
 .hero-label{font-size:14px;letter-spacing:.14em;font-weight:900;color:#e7c77d;margin-bottom:22px;text-transform:uppercase}
