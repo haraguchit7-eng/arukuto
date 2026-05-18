@@ -176,9 +176,32 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   width:100%;
   height:100%;
   object-fit:cover;
-  transform:scale(1.04);
+
+  /* 拡大をやめる */
+  transform:none;
+
+  /* 画質補正だけ残す */
   filter:brightness(1.02) contrast(1.05) saturate(1.06);
-  transition:transform 8s ease;
+
+  transition:none;
+}
+  /* =========================
+画像位置調整
+========================= */
+
+/* 測定写真 */
+.hero-slide.slide-01 img{
+  object-position:center 42%;
+}
+
+/* 旅行写真 */
+.hero-slide.slide-02 img{
+  object-position:70% center;
+}
+
+/* ウォーキング写真 */
+.hero-slide.slide-03 img{
+  object-position:center 58%;
 }
 .hero-slide.active img{
   transform:scale(1.09);
