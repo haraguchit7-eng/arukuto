@@ -317,9 +317,9 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 /* Footer */
 .footer{background:#06182e;padding:56px 20px 34px}
 .footer-inner{width:min(1180px,100%);margin:0 auto;text-align:center}
-.footer-logo-row{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:30px}
-.footer-logo-row img{height:42px;width:auto;opacity:.9;transition:.25s ease}
-.footer-logo-row img:hover{opacity:1;transform:translateY(-2px)}
+.footer--row{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:30px}
+.footer--row img{height:42px;width:auto;opacity:.9;transition:.25s ease}
+.footer--row img:hover{opacity:1;transform:translateY(-2px)}
 .footer-copy{font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.04em}
 
 .reveal{opacity:0;transform:translateY(22px);transition:.8s ease}
@@ -341,9 +341,9 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 
 @media(max-width:560px){
   .header-inner{height:66px}
-  .site-logo{width:42px;height:42px}
-  .logo-text strong{font-size:28px}
-  .logo-text span{font-size:10px;letter-spacing:.08em}
+  .site-{width:42px;height:42px}
+  .-text strong{font-size:28px}
+  .-text span{font-size:10px;letter-spacing:.08em}
   .nav-cta{height:44px;padding:0 14px;font-size:13px}
   .future-list{grid-template-columns:1fr}
   .hero-content h1{font-size:42px}
@@ -355,15 +355,15 @@ p{font-size:18px;color:var(--muted);font-weight:600}
   .flow-step{padding:26px}
   .hero-slider{min-height:650px}
 }
-  .logo img{
+  . img{
   width:140px;
   height:auto;
   display:block;
 }
   /* ヘッダーロゴを大きくする */
-.logo-wrap img,
-.site-logo,
-.logo-img{
+.-wrap img,
+.site-,
+.-img{
   width:300px !important;
   height:auto !important;
   max-height:none !important;
@@ -375,8 +375,8 @@ p{font-size:18px;color:var(--muted);font-weight:600}
 <body>
 <header class="header">
   <div class="header-inner">
-    <a href="#top" class="logo-wrap">
-      <img src="assets/logo-arukto3.png" alt="ARUKTO" class="site-logo">
+    <a href="#top" class="-wrap">
+      <img src="assets/logo-arukto60-new.png" alt="ARUKTO" class="site-logo">
       <div class="logo-text">
       </div>
     </a>
